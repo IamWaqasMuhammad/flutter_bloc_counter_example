@@ -1,7 +1,8 @@
-import 'package:counter_bloc_example/bloc/counter/counter_bloc.dart';
-import 'package:counter_bloc_example/bloc/switch_slider/bloc/switch_slider_bloc.dart';
-import 'package:counter_bloc_example/ui/screens/counter_screen.dart';
-import 'package:counter_bloc_example/ui/screens/switch_slider.dart';
+import 'package:counter_bloc_example/bloc/counter_bloc/counter_bloc.dart';
+import 'package:counter_bloc_example/bloc/slider_bloc/slider_bloc.dart';
+import 'package:counter_bloc_example/bloc/switch_bloc/switch_bloc.dart';
+import 'package:counter_bloc_example/presentation/screens/counter_screen.dart';
+import 'package:counter_bloc_example/presentation/screens/switch_slider.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
@@ -15,8 +16,12 @@ class MyApp extends StatelessWidget {
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
-    return BlocProvider(
-      create: (_) => CounterBloc(),
+    return MultiBlocProvider(
+      providers: [
+        BlocProvider(create: (context) => CounterBloc()),
+        BlocProvider(create: (context) => SwitchBloc()),
+        BlocProvider(create: (context) => SliderBloc()),
+      ],
       child: BlocProvider(
         create: (context) => SwitchBloc(),
         child: MaterialApp(
