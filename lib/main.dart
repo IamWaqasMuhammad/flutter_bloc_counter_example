@@ -1,7 +1,6 @@
 import 'package:counter_bloc_example/bloc/counter_bloc/counter_bloc.dart';
 import 'package:counter_bloc_example/bloc/slider_bloc/slider_bloc.dart';
 import 'package:counter_bloc_example/bloc/switch_bloc/switch_bloc.dart';
-import 'package:counter_bloc_example/presentation/screens/counter_screen.dart';
 import 'package:counter_bloc_example/presentation/screens/switch_slider.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
